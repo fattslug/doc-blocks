@@ -1,14 +1,14 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import React from "react";
-import { DesignSpec } from "@doc-blocks/design-spec";
-import { Row } from "@doc-blocks/row";
-import { Shield } from "@doc-blocks/shield";
-import { ShieldRow } from "@doc-blocks/shield-row";
-import { Story, Canvas } from "@storybook/addon-docs/blocks";
+import { DesignSpec } from "@fattslug/design-spec";
+import { Row } from "@fattslug/row";
+import { Shield } from "@fattslug/shield";
+import { ShieldRow } from "@fattslug/shield-row";
+import { Story, Canvas } from "@storybook/addon-docs";
 import styled from "@emotion/styled";
-import LinkTo from "@storybook/addon-links/dist/esm/react";
-import Markdown from "markdown-to-jsx";
+import LinkTo from "@storybook/addon-links/react";
+import Markdown from "react-markdown";
 import { css } from "emotion";
 import useLayoutEffect from "use-isomorphic-layout-effect";
 
@@ -161,9 +161,7 @@ export const GalleryItem = ({
         </StoryWrapper>
       </div>
 
-      <Canvas>
-        <Story id={firstStoryId} />
-      </Canvas>
+      <Canvas of={firstStoryId} />
     </Row>
   );
 };
